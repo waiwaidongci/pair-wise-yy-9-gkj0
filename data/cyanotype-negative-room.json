@@ -1,36 +1,53 @@
 {
-  "items": [
+  "meta": {
+    "version": 1,
+    "leaseMs": 30000,
+    "currentChemicalBatch": "B-0620"
+  },
+  "workstations": [
+    { "id": "W1", "name": "东窗工位" },
+    { "id": "W2", "name": "西窗工位" }
+  ],
+  "chemicalBatches": [
+    { "code": "B-0620", "version": 1, "updatedAt": "2026-06-20T00:00:00.000Z", "note": "初始药液批次", "current": true }
+  ],
+  "boxBatches": [],
+  "plates": [
     {
+      "id": "CN-0001",
       "code": "CN-001",
       "plateSize": "18x24cm",
       "chemicalBatch": "B-0620",
       "exposure": "8分钟",
       "waterSource": "井水过滤",
       "box": "蓝盒A-03",
-      "status": "待入盒",
-      "defect": "边角显影不均",
+      "status": "待曝光",
+      "defect": null,
+      "holder": null,
+      "leaseExpiresAt": null,
+      "checkpoints": [],
+      "consumptions": [],
+      "boxBatchId": null,
+      "invalidReason": null,
+      "invalidatedAt": null,
+      "requeueCount": 0,
       "logs": [
-        {
-          "at": "2026-06-20",
-          "step": "曝光",
-          "note": "阴天补时2分钟"
-        },
-        {
-          "at": "2026-06-21T03:50:30.042Z",
-          "step": "入盒",
-          "note": "放入A盒"
-        }
-      ],
-      "steps": [
-        {
-          "at": "2026-06-21T03:50:30.042Z",
-          "step": "入盒",
-          "developStatus": "稳定",
-          "defect": "边角显影不均",
-          "repair": "边角重涂",
-          "note": "放入A盒"
-        }
+        { "at": "2026-06-20", "step": "曝光", "note": "阴天补时2分钟" },
+        { "at": "2026-06-20T00:00:00.000Z", "step": "建档", "note": "创建玻璃板" }
       ]
     }
-  ]
+  ],
+  "events": [
+    {
+      "id": "EV-0001",
+      "at": "2026-06-20T00:00:00.000Z",
+      "type": "建档",
+      "plateId": "CN-0001",
+      "workstation": null,
+      "reason": "玻璃板建档",
+      "detail": "初始药液批次 B-0620"
+    }
+  ],
+  "telemetry": [],
+  "counters": { "plate": 1, "box": 0, "event": 1 }
 }
